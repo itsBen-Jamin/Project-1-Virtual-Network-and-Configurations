@@ -99,8 +99,10 @@ SSH into the control node and follow the steps below: (Similar steps also apply 
 - _Update the filebeat-config.yml file to include the control node's IP address._
 - _Run the playbook, and navigate to Jump Box machine to check that the installation worked as expected._
 
-_TODO: Answer the following questions to fill in the blanks:_
+
+### Steps not specified:
+
 - _Playbooks are located in the /etc/ansible file_
-- _Remote machine will need to be specified in the ansible.cfg. 
+- _Remote machine will need to be specified in the ansible.cfg._
 - _To specifing what machine to direct a YAML files to, you will also configure the desired locations in the ansible.cfg file_
 - _To make sure the ELK server is recieving logs navigate to http://13.64.108.55:5601/app/kibana#/home and make sure Kibana is collecting data from the ELK stack_
