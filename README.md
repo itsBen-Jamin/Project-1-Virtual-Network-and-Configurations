@@ -104,5 +104,5 @@ SSH into the control node and follow the steps below: (Similar steps also apply 
 
 - _Playbooks are located in the /etc/ansible file_
 - _Remote machine will need to be specified in the ansible.cfg._
-- _To specifing what machine to direct a YAML files to, you will also configure the desired locations in the ansible.cfg file_
+- _To specifing what machine to direct a YAML files to, you will need to set the desired 'host(s)' as the target inside desired YAML file_
 - _To make sure the ELK server is recieving logs navigate to http://13.64.108.55:5601/app/kibana#/home and make sure Kibana is collecting data from the ELK stack_
