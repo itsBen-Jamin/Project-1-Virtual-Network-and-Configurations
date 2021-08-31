@@ -28,4 +28,32 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - _Metricbeat is assists in monitoring and makeing changes to a system that doesnt have Graphical User Inerface(GUI). Using Metricbeat you can monitor any processes running on that system that may be drawing from the systems resources_
 
 The configuration details of each machine may be found below.
+| Name          | Function          | IP Address   | OS    |
+|---------------|-------------------|--------------|-------|
+| Jump Box      | Gateway           | 10.0.0.4     | Linux |
+| Web-1         | DVWA              | 10.0.0.5     | Linux |
+| Web-2         | DVWA              | 10.0.0.6     | Linux |
+| Web-3         | DVWB              | 10.0.0.7     | Linux |
+| Load Balancer | Balancing Traffic | 20.106.134.5 | N/A   |
+| ELK-Server    | File/Metricbeat   | 13.64.108.55 | Linux |
+
+### Access Policies
+
+The Web machines on the internal network are not exposed to the public Internet. 
+
+Only the Load Balancer machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- _My private home IP address or any additional whitelisted IP address that need to be added_
+
+Machines within the network can only be accessed by the Ansible Jump Box.
+- _Ansible Jump Box: IP@ 13.68.235.99_
+
+A summary of the access policies in place can be found in the table below.
+| Name          | Publicly Accessible | Allowed IP Address |
+|---------------|---------------------|--------------------|
+| Jump Box      | No ONLY via SSH     | My Private IP      |
+| Web-1         | No                  | 10.0.0.4           |
+| Web-2         | No                  | 10.0.0.4           |
+| Web-3         | No                  | 10.0.0.4           |
+| Load Balancer | Yes                 | WAN                |
+| ELK-Server    | No                  | 10.0.0.4           |
 
