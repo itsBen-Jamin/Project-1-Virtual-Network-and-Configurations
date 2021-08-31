@@ -70,6 +70,9 @@ The playbook implements the following tasks:
 - _Downloads and Launches Docker ELK container_
 - _Creates Docker Images_
 
+[ELKplaybook.yml](https://github.com/itsBen-Jamin/Project-1-Virtual-Network-and-Configurations/files/7086464/ELKplaybook.yml.txt)
+
+
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
@@ -86,15 +89,15 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 - _Filebeat collects and generates logs displaying system audits. Audit logs collect data documenting resources that were accessed, also including the destination and source addresses, timestamps, and user login information correlating to those addresses for later examination_
-- Metricbeat collects statistics relating to the health of the system. Logging data such as CPU, memory, data, and resource usage._
+- _Metricbeat collects statistics relating to the health of the system. Logging data such as CPU, memory, data, and resource usage._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the _____ file to _____.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- _Copy the /etc/ansible/filebeat-config.yml file to /etc/filebeat/filebeat.yml._
+- _Update the filebeat-config.yml file to include the control node's IP address._
+- _Run the playbook, and navigate to Jump Box machine to check that the installation worked as expected._
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
