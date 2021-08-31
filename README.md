@@ -75,7 +75,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+<img width="949" alt="Capture69" src="https://user-images.githubusercontent.com/79231152/131570554-c6275f51-8153-4d3d-94e2-c68885def872.PNG">
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -94,12 +94,13 @@ These Beats allow us to collect the following information from each machine:
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-SSH into the control node and follow the steps below:
+SSH into the control node and follow the steps below: (Similar steps also apply to the Metricbeat-Playbook)
 - _Copy the /etc/ansible/filebeat-config.yml file to /etc/filebeat/filebeat.yml._
 - _Update the filebeat-config.yml file to include the control node's IP address._
 - _Run the playbook, and navigate to Jump Box machine to check that the installation worked as expected._
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Playbooks are located in the /etc/ansible file_
+- _Remote machine will need to be specified in the ansible.cfg. 
+- _To specifing what machine to direct a YAML files to, you will also configure the desired locations in the ansible.cfg file_
+- _To make sure the ELK server is recieving logs navigate to http://13.64.108.55:5601/app/kibana#/home and make sure Kibana is collecting data from the ELK stack_
