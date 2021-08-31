@@ -26,3 +26,6 @@ Load balancing ensures that the application and/or web site will be highly avail
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the traffic and system logs.
 - _Filebeat is a program that assists in collection, generation, and the organization of log events pertaining to a specified server, including this ELK server. Specifically, Filebeat monitors any actions and changes within the system and marks them with a timestamp_
 - _Metricbeat is assists in monitoring and makeing changes to a system that doesnt have Graphical User Inerface(GUI). Using Metricbeat you can monitor any processes running on that system that may be drawing from the systems resources_
+
+The configuration details of each machine may be found below.
+
