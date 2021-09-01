@@ -20,7 +20,7 @@ This document contains the following details:
 ### Description of the Topology
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application and/or web site will be highly available by evenly distributing traffic, in addition to restricting unintended guests directly into the network.
+Load balancing ensures that the application and/or web site will be highly available by evenly distributing traffic to diferent a server(s), in addition to restricting unintended guests directly into the network.
 - _Load Balancers provide a few different levels of security. For example, the main intended use of a load balancer, is to assist a website that is receives high volumes of web traffic. The load balancer will decide when one server is being overloaded by the traffic and will then redirect the traffic to another server within the same container, offloading the full stress, from the priority server. Which could result in Denial of Service(DoS). They recieve daily rule updates just like a virus scanner and the Load Balancer is also given it's own public IP. Having it's own Public IP, backed by a Jump Box, will make sure that the only traffic coming threw it are HTTP request. Making the web servers only accessable from a Jump Box. A Jump Boxes biggest advantages is allowing a one way connection with a server threw a SSH key, uniquely identified to a specific remote machine_
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the traffic and system logs.
