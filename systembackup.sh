@@ -1,0 +1,8 @@
+#!/bin/bash/
+
+#system details backing files
+free -h >> /home/sysadmin/backups/freemem/free_mem.txt
+df -h >> /home/sysadmin/backups/diskuse/disk_usage.txt
+df -h >> /home/sysadmin/backups/freedisk/free_disk.txt
+apt-get install locate >> /home/sysadmin/backups/openlist/open_list.txt
+#this script is to be used in a linux OS to backup details about the system and usages
