@@ -106,3 +106,38 @@ SSH into the control node and follow the steps below: (Similar steps also apply 
 - _Remote machine will need to be specified in the ansible.cfg._
 - _To specifing what machine to direct a YAML files to, you will need to set the desired 'host(s)' as the target inside desired YAML file_
 - _To make sure the ELK server is recieving logs navigate to http://13.64.108.55:5601/app/kibana#/home and make sure Kibana is collecting data from the ELK stack_
+
+### Red-Team NSG Rules and Reason
+
+| Priority 	| Name            	| Port 	| Protocol 	| Source       	| Destination 	| Action 	|
+|----------	|-----------------	|------	|----------	|--------------	|-------------	|--------	|
+| 500      	| Allow_RDP       	| 3389 	| TCP      	| MY PRIV. IP  	| VNet        	| Deny   	|
+| 4090     	| Allow_SSH_2_ELK 	| 5601 	| TCP      	| 13.68.235.99 	| 10.1.0.4    	| Allow  	|
+| 4093     	| Allow_HTTP_VNet 	| 80   	| TCP      	| MY PRIV. IP  	| VNet        	| Allow  	|
+| 4094     	| Allow_SSH_VNet  	| 22   	| TCP      	| MY PRIV. IP  	| VNet        	| Allow  	|
+| 4095     	| Allow_SSH       	| 22   	| TCP      	| MY PRIV. IP  	| 10.0.0.4    	| Allow  	|
+
+_Rule #1: Allow_RDP_-   RDP(Remote Desktop Protocol) has a predefined port number of 3389. This rules allows for Remote Desktop Protocol from only my specified IP address if the action was decided to be Allowed with a high priority of 500.
+
+_Rule #2: Allow_SSH_2_ELK_-   This rule runs on specified port 5601 for the ELK server. This rule was placed to allow for the Ansible Jump Box access.
+
+_Rule #3: Allow_HTTP_VNet_-   Threw port 80, this rule allows me only (or if left open, anyone with the known web server's IP address) to send HTTP requests to the Red-Team's virtual network Web servers
+
+_Rule #4: Allow_SSH_VNet_-  SSH is predefined on port 22 and this rule is is place to allow ONLY my IP access to the VNet for security reasons. This specifacally grant only one user to be able to access the back-end of the web servers threw a jump box realating to my IP and machine's generated SSH Key
+
+_Rule #5: Allow_SSH_- Like the last rule, this one is in place to for the security reason of only allowing my IP to be allowed to access the Jump Box. This rule is set with the lowest prioritiy because it will be the first action taken to access both the Red-Team VNet and RedELK VNet. Haviong this rule any higher than the others would result rule conflicting
+
+
+### RedELK NSG Rules and Reasons
+
+| Priority 	| Name                 	| Port 	| Protocol 	| Source        	| Destionation 	| Action 	|
+|----------	|----------------------	|------	|----------	|---------------	|--------------	|--------	|
+| 500      	| Allow_ELKrdp         	| 3389 	| TCP      	| MY PRIV. IP   	| 13.64.108.55 	| Allow  	|
+| 4090     	| Allow_SSH_frm_Home   	| 5601 	| TCP      	| MY PRIV. IP   	| VNet         	| Allow  	|
+| 4094     	| Allow_SSH_ELK_2_VNet 	| 22   	| TCP      	| 10.1.04       	| VNet         	| Allow  	|
+| 4095     	| Allow_SSH_FRM_Jump   	| 22   	| TCP      	| 40.121.145.59 	| 10.1.0.4     	| Allow  	|
+
+_Rule #1: Allow_ELKrdp_-  
+_Rule #2: Allow_SSH_frm_Home_-  
+_Rule #3: Allow_SSH_ELK_2_VNet_-    
+_Rule #4: ALLow _SSH_FRM_Jump_- 
