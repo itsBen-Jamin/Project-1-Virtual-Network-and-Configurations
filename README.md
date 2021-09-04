@@ -132,12 +132,12 @@ _Rule #5: Allow_SSH_- Like the last rule, this one is in place to for the securi
 
 | Priority 	| Name                 	| Port 	| Protocol 	| Source        	| Destionation 	| Action 	|
 |----------	|----------------------	|------	|----------	|---------------	|--------------	|--------	|
-| 500      	| Allow_ELKrdp         	| 3389 	| TCP      	| MY PRIV. IP   	| 13.64.108.55 	| Allow  	|
+| 500      	| Allow_ELKrdp         	| 3389 	| TCP      	| MY PRIV. IP   	| 13.64.108.55 	| Deny   	|
 | 4090     	| Allow_SSH_frm_Home   	| 5601 	| TCP      	| MY PRIV. IP   	| VNet         	| Allow  	|
-| 4094     	| Allow_SSH_ELK_2_VNet 	| 22   	| TCP      	| 10.1.04       	| VNet         	| Allow  	|
 | 4095     	| Allow_SSH_FRM_Jump   	| 22   	| TCP      	| 40.121.145.59 	| 10.1.0.4     	| Allow  	|
 
-_Rule #1: Allow_ELKrdp_-  
-_Rule #2: Allow_SSH_frm_Home_-  
-_Rule #3: Allow_SSH_ELK_2_VNet_-    
-_Rule #4: ALLow _SSH_FRM_Jump_- 
+_Rule #1: Allow_ELKrdp_-  This rule has a high priority for reasons of instant start up on if the action is Allowed. This would only be accesable threw my private IP or any other whitelisted IP needed. This rule was added just as an example. This ELK server doe not have any GUI other than the Kibana Sites GUI
+
+_Rule #2: Allow_SSH_frm_Home_- To keep the ELK stack secure, threw only port 5601 can my private IP access the ELK stack's Virtual Network.
+
+_Rule #3: ALLow _SSH_FRM_Jump_- For security reasons as well, this rule allows only the Jump Box IP to access the information being sent to the ELK Server. Via the remote location on that Jump Box threw SSH
