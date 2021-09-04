@@ -4,9 +4,9 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-![filebeat-playbook.yml](https://github.com/itsBen-Jamin/Project-1-Virtual-Network-and-Configurations/files/7085395/filebeat-playbook.yml.txt)
+![filebeat-playbook.yml](https://github.com/itsBen-Jamin/Project-1-Virtual-Network-and-Configurations/files/7085395/filebeat-playbook.yml.txt) [Select this file to Download .txt copy of filebeat-playbook | to view select the file in the README repository above]
 
-![metricbeat-playbook.yml](https://github.com/itsBen-Jamin/Project-1-Virtual-Network-and-Configurations/files/7085661/metricbeat-playbook.yml.txt)
+![metricbeat-playbook.yml](https://github.com/itsBen-Jamin/Project-1-Virtual-Network-and-Configurations/files/7085661/metricbeat-playbook.yml.txt) [Select this file to Download .txt copy of metricbeat-playbook | to view select the file in the README repository above]
 
 
 This document contains the following details:
