@@ -33,7 +33,7 @@ The configuration details of each machine may be found below.
 | Jump Box      | Gateway           | 10.0.0.4     | Linux |
 | Web-1         | DVWA              | 10.0.0.5     | Linux |
 | Web-2         | DVWA              | 10.0.0.6     | Linux |
-| Web-3         | DVWB              | 10.0.0.7     | Linux |
+| Web-3         | DVWA              | 10.0.0.7     | Linux |
 | Load Balancer | Balancing Traffic | 20.106.134.5 | N/A   |
 | ELK-Server    | File/Metricbeat   | 13.64.108.55 | Linux |
 
